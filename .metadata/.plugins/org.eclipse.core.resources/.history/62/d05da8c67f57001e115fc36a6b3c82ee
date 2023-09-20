@@ -8,7 +8,7 @@
 		Cookie[] cookies= request.getCookies();
 		for(Cookie c : cookies) {
 			if(c.getName().equals("name")){
-				name=c.getValue();
+				name=c.getName();
 			} else if(c.getName().equals("age")){
 				age=c.getValue();
 			}

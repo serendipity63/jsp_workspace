@@ -1,13 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-	Cookie cookie= new Cookie("name", "lee kang in");
-	cookie.setMaxAge(600);
-	response.addCookie(cookie);
+	Cookie cookie1= new Cookie("name", "leekangin");
+	cookie1.setMaxAge(600);
+	response.addCookie(cookie1);
+	Cookie cookie2= new Cookie("age", "22");
+	cookie2.setMaxAge(600);
+	response.addCookie(cookie2);
+	
 %>    
-    
-    
-    
+          
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,9 +17,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h2><%=cookie.getName() %></h2>
-<h2><%=cookie.getValue() %></h2>
-<h2><%=cookie.getMaxAge() %></h2>
+<h2><%=cookie1.getName() %></h2>
+<h2><%=cookie1.getValue() %></h2>
+<h2><%=cookie1.getMaxAge() %></h2>
+<h2><%=cookie2.getName() %></h2>
+<h2><%=cookie2.getValue() %></h2>
+<h2><%=cookie2.getMaxAge() %></h2>
 <a href="cookieTest2.jsp">쿠키 값 불러오기</a>
 </body>
 </html>
