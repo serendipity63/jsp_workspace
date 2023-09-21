@@ -1,4 +1,6 @@
 INDEX VERSION 1.131
+C:\jsk\jsp_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\63319914.index
+\BankProj2\src\main\java
 C:\jsk\jsp_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1223274783.index
 \JspExam5\src\main\java
 C:\jsk\jsp_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3996145768.index
