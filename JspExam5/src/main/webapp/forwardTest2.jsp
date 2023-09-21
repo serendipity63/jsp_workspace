@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h2>포워드 된 페이지(fowardTest2.jsp)</h2>
+<h2>포워드 된 페이지(forwardTest2.jsp)</h2>
 	<table border="1">
 		<tr>
 		<td>이름</td>

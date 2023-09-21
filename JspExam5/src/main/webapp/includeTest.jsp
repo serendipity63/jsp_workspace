@@ -9,7 +9,7 @@
 <body>
 <h2>인클루드 액션 테스트</h2>
 <jsp:include page="includeTest2.jsp">
-<jsp:param name="name" value="sonheungmin"/>
+	<jsp:param name="name" value="sonheungmin"/>
 </jsp:include>
 </body>
 </html>
