@@ -3,7 +3,7 @@
 <%
 request.setCharacterEncoding("utf-8");
 request.setAttribute("nickname","소니");
-/*request.setAttribute("test","Request Test");  */
+/*request.setAttribute("test","Request Test"); request 잘 안쓴다 */
 %>
 <!DOCTYPE html>
 <html>
