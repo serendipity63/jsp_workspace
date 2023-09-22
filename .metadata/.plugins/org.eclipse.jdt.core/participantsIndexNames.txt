@@ -3,6 +3,8 @@ C:\jsk\jsp_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\63319
 \BankProj2\src\main\java
 C:\jsk\jsp_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1223274783.index
 \JspExam5\src\main\java
+C:\jsk\jsp_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\460581531.index
+\JspExam6\src\main\java
 C:\jsk\jsp_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3996145768.index
 \BankProj\src\main\java
 C:\jsk\jsp_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1403570784.index

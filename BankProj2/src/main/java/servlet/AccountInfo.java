@@ -33,6 +33,13 @@ public class AccountInfo extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		if (session.getAttribute("id") == null) {
+			request.setAttribute("err", "로그인하세요");
+
+			request.getRequestDispatcher("error.jsp").forward(request, response);
+			return;
+		}
 		RequestDispatcher dispatcher = request.getRequestDispatcher("accountinfoform.jsp");
 		dispatcher.forward(request, response);
 	}

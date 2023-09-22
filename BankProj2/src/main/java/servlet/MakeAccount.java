@@ -33,6 +33,14 @@ public class MakeAccount extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		if (session.getAttribute("id") == null) {
+			request.setAttribute("err", "로그인하세요");
+
+			request.getRequestDispatcher("error.jsp").forward(request, response);
+			return;
+		}
+
 		RequestDispatcher dispatcher = request.getRequestDispatcher("makeaccount.jsp");
 		// 화면만 보여주는
 		dispatcher.forward(request, response);
