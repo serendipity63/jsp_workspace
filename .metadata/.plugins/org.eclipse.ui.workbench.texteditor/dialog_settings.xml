@@ -6,6 +6,7 @@
 		<item key="wholeword" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="button"/>
 			<item value="out"/>
 		</list>
 		<list key="replacehistory">
