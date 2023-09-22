@@ -44,7 +44,7 @@ input[type='submit'] {
 <body>
 <% pageContext.include("header.jsp"); %>
 	<center>
-		<form action="makeAccount" method="post">
+		<form action="makeaccount" method="post">
 			<div class="header">
 				<h3>계좌개설</h3>
 			</div>

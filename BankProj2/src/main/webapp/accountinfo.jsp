@@ -50,7 +50,7 @@ input[type='submit'] {
 
 	<center>
 		<div class="header">
-			<h3>계좌조회</h3>
+			<h3>계좌조회</h3>
 		</div>
 		<div class="container" id='result'>
 			<div class="row">
@@ -72,13 +72,13 @@ input[type='submit'] {
 				</div>
 			</div>
 			<div class="row">
-				<div class="title">종류</div>
+				<div class="title">종류</div>
 				<div class="input">
 					<input type="text" name="type" id='type' disabled value=<%=acc.getType() %>>
 				</div>
 			</div>
 			<div class="row">
-				<div class="title">등급</div>
+				<div class="title">등급</div>
 				<div class="input">
 					<input type="text" name="grade" id='grade' disabled value<%=acc.getGrade() %>>
 				</div>
