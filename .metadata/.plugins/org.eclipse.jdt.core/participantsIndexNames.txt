@@ -5,6 +5,8 @@ C:\jsk\jsp_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\12232
 \JspExam5\src\main\java
 C:\jsk\jsp_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1010888680.index
 \NearByDoc\src\main\java
+C:\jsk\jsp_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2613018504.index
+\DBExam\src\main\java
 C:\jsk\jsp_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3996145768.index
 \BankProj\src\main\java
 C:\jsk\jsp_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\460581531.index
