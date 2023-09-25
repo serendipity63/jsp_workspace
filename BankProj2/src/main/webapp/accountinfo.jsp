@@ -1,9 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="dto.Account"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+	
+<%-- <%@ page import="dto.Account"%>
 <%
 	Account acc = (Account) request.getAttribute("acc");
-%>
+%> --%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,8 +48,9 @@ input[type='submit'] {
 </style>
 </head>
 <body>
-<% pageContext.include("header.jsp"); %>
-
+<jsp:include page="header.jsp"/>
+<%-- <% pageContext.include("header.jsp"); %>
+ --%>
 	<center>
 		<div class="header">
 			<h3>계좌조회</h3>
@@ -56,31 +59,32 @@ input[type='submit'] {
 			<div class="row">
 				<div class="title">계좌번호</div>
 				<div class="input">
-					<input type="text" name="id" id='id' disabled value= <%=acc.getId() %>>
+					<input type="text" name="id" id='id' disabled value= "${acc.id }">
 				</div>
 			</div>
 			<div class="row">
 				<div class="title">이름</div>
 				<div class="input">
-					<input type="text" name="name" id='name' disabled value= <%=acc.getName() %>>
+					<input type="text" name="name" id='name' disabled value= "${acc.name }" >
+				
 				</div>
 			</div>
 			<div class="row">
 				<div class="title">잔액</div>
 				<div class="input">
-					<input type="text" name="money" id='money' disabled value= <%=acc.getBalance() %>>
+					<input type="text" name="money" id='money' disabled value= "${acc.balance }" >
 				</div>
 			</div>
 			<div class="row">
 				<div class="title">종류</div>
 				<div class="input">
-					<input type="text" name="type" id='type' disabled value=<%=acc.getType() %>>
+					<input type="text" name="type" id='type' disabled value="${acc.type }">
 				</div>
 			</div>
 			<div class="row">
 				<div class="title">등급</div>
 				<div class="input">
-					<input type="text" name="grade" id='grade' disabled value<%=acc.getGrade() %>>
+					<input type="text" name="grade" id='grade' disabled value="${acc.grade }">
 				</div>
 			</div>
 		</div>

@@ -55,7 +55,8 @@ public class MakeAccount extends HttpServlet {
 		Integer money = Integer.parseInt(request.getParameter("money"));
 		String type = request.getParameter("type");
 		String grade = request.getParameter("grade");
-
+		if (grade == null)
+			grade = "";
 		// 2. Account 객체 생성
 		Account acc = new Account(id, name, money, type, grade);
 		// 3. Session 얻어온다(request.getsession)
