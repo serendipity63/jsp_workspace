@@ -1,26 +1,15 @@
 package dao;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
+import dto.JdbcUtil;
 import dto.Member;
 
 public class MemberDAO {
 
-	public static Connection getConnection() {
-		Connection conn = null;
-
-		try {
-			Class.forName("org.mariadb.jdbc.Driver");
-			conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/testdb", "root", "1234");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return conn;
-	}
-
-	public static int insertMember(Connection conn, Member member) {
+	public static int insertMember(Member member) {
+		Connection conn = JdbcUtil.getConnection();
 		int cnt = 0;
 		PreparedStatement pstmt = null;
 		String sql = "insert into member values(?,?,?,?,?)";
@@ -42,17 +31,8 @@ public class MemberDAO {
 				e.printStackTrace();
 			}
 		}
+		JdbcUtil.close(conn);
 		return cnt;
-	}
-
-	public static void close(Connection conn) {
-		try {
-			if (conn != null)
-				conn.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-
-		}
 	}
 
 }
