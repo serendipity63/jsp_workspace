@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>JSTL xml 라이브러리 사용 예제</title>
 </head>
 <body>
 <x:parse var="xmldata">
@@ -17,9 +17,9 @@
 		<phone>010-3456-1123</phone>
 	</student>
 	<student>
-		<name>손흥민</name>
+		<name>지소연</name>
 		<age>31</age>
-		<gender>남</gender>
+		<gender>여</gender>
 		<phone>010-4545-1123</phone>
 	</student>
 	<student>
