@@ -27,3 +27,5 @@ C:\jsk\jsp_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\41020
 \NearByDoc\src\main\java
 C:\jsk\jsp_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1872081327.index
 \JspExam6\src\main\java
+C:\jsk\jsp_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2476452672.index
+\BankDBProj\src\main\java
