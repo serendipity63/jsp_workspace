@@ -18,7 +18,12 @@ public class AccountDAOImpl implements AccountDAO {
 	@Override
 	public Account selectAccount(String id) throws Exception {
 		Account acc = sqlSession.selectOne("mapper.account.selectAccount", id);
-		System.out.println(acc.getId());
 		return acc;
+	}
+
+	@Override
+	public void updateBalance(Account acc) throws Exception {
+		sqlSession.update("mapper.account.updateBalance", acc);
+		sqlSession.commit();
 	}
 }

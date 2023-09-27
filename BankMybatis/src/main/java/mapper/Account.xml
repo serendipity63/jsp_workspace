@@ -8,9 +8,17 @@
 		insert into account(id,name,balance,type,grade) values (#{id},#{name},#{balance},#{type},#{grade})
 		]]>
 	</insert>
+	
 	<select id="selectAccount" parameterType="String" resultType="Account">
 			<![CDATA[
 			select * from account where id= #{id}
 			]]>
 	</select>
+	<update id="updateBalance" parameterType="Account">
+		<![CDATA[
+		update account set balance=#{balance} where id=#{id}
+		]]>
+	</update>
+	
+	
 </mapper>

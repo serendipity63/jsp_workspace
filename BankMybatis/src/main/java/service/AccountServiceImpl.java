@@ -23,4 +23,22 @@ public class AccountServiceImpl implements AccountService {
 		return accountDao.selectAccount(id);
 	}
 
+	@Override
+	public void deposit(String id, Integer money) throws Exception {
+		Account acc = accountDao.selectAccount(id);
+		if (acc == null)
+			throw new Exception("계좌번호 오류");
+		acc.deposit(money);
+		accountDao.updateBalance(acc);
+	}
+
+	@Override
+	public void withdraw(String id, Integer money) throws Exception {
+		Account acc = accountDao.selectAccount(id);
+		if (acc == null)
+			throw new Exception("계좌번호 오류");
+		acc.withdraw(money);
+		accountDao.updateBalance(acc);
+	}
+
 }
