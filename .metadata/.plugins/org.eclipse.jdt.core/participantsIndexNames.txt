@@ -29,3 +29,5 @@ C:\jsk\jsp_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\18720
 \JspExam6\src\main\java
 C:\jsk\jsp_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2476452672.index
 \BankDBProj\src\main\java
+C:\jsk\jsp_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4072920326.index
+\BankMybatis\src\main\java
