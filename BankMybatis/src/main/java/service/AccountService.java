@@ -1,5 +1,7 @@
 package service;
 
+import java.util.List;
+
 import bean.Account;
 
 public interface AccountService {
@@ -11,4 +13,6 @@ public interface AccountService {
 	void deposit(String id, Integer money) throws Exception;
 
 	void withdraw(String id, Integer money) throws Exception;
+
+	List<Account> allAccountInfo() throws Exception;
 }

@@ -55,7 +55,5 @@ public class Withdraw extends HttpServlet {
 			request.setAttribute("err", e.getMessage());
 			request.getRequestDispatcher("error.jsp").forward(request, response);
 		}
-
 	}
-
 }

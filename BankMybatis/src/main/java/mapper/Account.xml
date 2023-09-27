@@ -20,5 +20,10 @@
 		]]>
 	</update>
 	
+	<select id="selectAccountList" resultType="Account">
+			<![CDATA[
+			select * from account order by id
+			]]>
+	</select>
 	
 </mapper>

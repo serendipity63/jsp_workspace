@@ -1,5 +1,7 @@
 package service;
 
+import java.util.List;
+
 import bean.Account;
 import dao.AccountDAO;
 import dao.AccountDAOImpl;
@@ -39,6 +41,11 @@ public class AccountServiceImpl implements AccountService {
 			throw new Exception("계좌번호 오류");
 		acc.withdraw(money);
 		accountDao.updateBalance(acc);
+	}
+
+	@Override
+	public List<Account> allAccountInfo() throws Exception {
+		return accountDao.selectAccountList();
 	}
 
 }

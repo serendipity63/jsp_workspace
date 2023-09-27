@@ -1,5 +1,7 @@
 package dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 
 import bean.Account;
@@ -25,5 +27,10 @@ public class AccountDAOImpl implements AccountDAO {
 	public void updateBalance(Account acc) throws Exception {
 		sqlSession.update("mapper.account.updateBalance", acc);
 		sqlSession.commit();
+	}
+
+	@Override
+	public List<Account> selectAccountList() throws Exception {
+		return sqlSession.selectList("mapper.account.selectAccountList");
 	}
 }
