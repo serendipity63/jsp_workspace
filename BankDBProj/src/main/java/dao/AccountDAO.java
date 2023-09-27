@@ -68,6 +68,32 @@ public class AccountDAO {
 		return acc;
 	}
 
+	public void updateAccount(Account acc) {
+		Connection conn = JdbcUtil.getConnection();
+		PreparedStatement pstmt = null;
+
+		String sql = "UPDATE account SET name=?, balance=?, type=?, grade=? WHERE id=?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, acc.getName());
+			pstmt.setInt(2, acc.getBalance());
+			pstmt.setString(3, acc.getType());
+			pstmt.setString(4, acc.getGrade());
+			pstmt.setString(5, acc.getId());
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pstmt != null)
+					pstmt.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+		JdbcUtil.close(conn);
+	}
 }
 
 //dao는 db에 접근한다
