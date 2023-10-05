@@ -64,19 +64,18 @@ table {
 			<a href="boardwrite">글쓰기</a>
 		</c:if>
 	</h3>
-	
+
 	<form action="boardsearch" method="post" id="searchform">
-		<input type="hidden" name="page" id="page" value="1">	
-	<h5>
+		<input type="hidden" name="page" id="page" value="1">
+		<h5>
 			<select name="type">
 				<option value="all">선택</option>
 				<option value="subject" ${type eq 'subject'? 'selected':''}>제목</option>
 				<option value="writer" ${type eq 'writer'? 'selected':''}>작성자</option>
 				<option value="content" ${type eq 'content'? 'selected':''}>내용</option>
-			</select> 
-			<input type="text" name="keyword" id="keyword" value="${res.keyword }" /> 
-			<input type="submit" value="검색" />
-	</h5>
+			</select> <input type="text" name="keyword" id="keyword"
+				value="${res.keyword }" /> <input type="submit" value="검색" />
+		</h5>
 	</form>
 	<table>
 		<tr id="tr_top">
@@ -86,7 +85,7 @@ table {
 			<th>날짜</th>
 			<th>조회수</th>
 			<th>삭제</th>
-			
+
 			<c:forEach items="${res.boardList }" var="board">
 				<tr>
 					<td>${board.num }</td>
@@ -96,11 +95,10 @@ table {
 					<td>${board.writedate }</td>
 					<td>${board.viewcount }</td>
 					<!--작성자만 삭제할 수 있게 하게 -->
-					<td>
-					<c:if test="${user.id == board.writer }">
-							<a href="boarddelete?num=${board.num }&page=${res.pageInfo.curPage}">삭제</a>
-						</c:if>
-						</td>
+					<td><c:if test="${user.id == board.writer }">
+							<a
+								href="boarddelete?num=${board.num }&page=${res.pageInfo.curPage}">삭제</a>
+						</c:if></td>
 				</tr>
 			</c:forEach>
 		</tr>
@@ -120,10 +118,12 @@ table {
 			end="${res.pageInfo.endPage }" var="i">
 			<c:choose>
 				<c:when test="${res.pageInfo.curPage==i }">
-					<a href="boardlist?page=${i}" class="select" onclick="callBtn(${i});return ${res.keyword==null };">${i}</a>&nbsp;	
+					<a href="boardlist?page=${i}" class="select"
+						onclick="callBtn(${i});return ${res.keyword==null };">${i}</a>&nbsp;	
 			</c:when>
 				<c:otherwise>
-					<a href="boardlist?page=${i}" class="btn" onclick="callBtn(${i});return ${res.keyword==null };">${i}</a>&nbsp;	
+					<a href="boardlist?page=${i}" class="btn"
+						onclick="callBtn(${i});return ${res.keyword==null };">${i}</a>&nbsp;	
 			</c:otherwise>
 			</c:choose>
 
