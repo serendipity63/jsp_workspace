@@ -20,7 +20,8 @@ a,b {
 </head>
 <body>
 	<div id="header">
-		<img src="image?file=logo.png" width="100px" height="100px">&nbsp;&nbsp;
+	
+		<img src="image?file=logo1.png" width="100px" height="100px">&nbsp;&nbsp;
 		<c:choose>
 			<c:when test="${user eq Empty}">
 				<a href="login">로그인</a>

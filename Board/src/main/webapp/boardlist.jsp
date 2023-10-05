@@ -26,9 +26,33 @@ table {
 	width: 800px;
 	text-align: center;
 }
+
+#emptyArea a {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	text-decoration: none;
+}
+
+#emptyArea .btn {
+	background: lightgray;
+}
+
+#emptyArea .select {
+	background: lightblue;
+}
 </style>
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 <script>
+
+	function callBtn(num){
+		console.log($("#keyword").val())
+		var keyword=$("#keyword").val();
+		if(keyword!=null && keyword.trim()!='' ){
+			$('#page').val(num);
+			$('#searchform').submit;
+		}
+	}
 	
 </script>
 </head>
@@ -41,14 +65,19 @@ table {
 			<a href="boardwrite">글쓰기</a>
 		</c:if>
 	</h3>
-	<form action="./search" method="post">
-		<h5>
+	
+	<form action="boardsearch" method="post" id="searchform">
+		<input type="hidden" name="page" id="page" value="1">	
+	<h5>
 			<select name="type">
-				<option value="subject">제목</option>
-				<option value="writer">작성자</option>
-				<option value="content">내용</option>
-			</select> <input type="text" name="word" /> <input type="submit" value="검색" />
-		</h5>
+				<option value="all">선택</option>
+				<option value="subject" ${type eq 'subject'? 'selected':''}>제목</option>
+				<option value="writer" ${type eq 'writer'? 'selected':''}>작성자</option>
+				<option value="content" ${type eq 'content'? 'selected':''}>내용</option>
+			</select> 
+			<input type="text" name="keyword" id="keyword" value="${res.keyword }" /> 
+			<input type="submit" value="검색" />
+	</h5>
 	</form>
 	<table>
 		<tr id="tr_top">
@@ -58,6 +87,7 @@ table {
 			<th>날짜</th>
 			<th>조회수</th>
 			<th>삭제</th>
+			
 			<c:forEach items="${res.boardList }" var="board">
 				<tr>
 					<td>${board.num }</td>
@@ -67,9 +97,11 @@ table {
 					<td>${board.writedate }</td>
 					<td>${board.viewcount }</td>
 					<!--작성자만 삭제할 수 있게 하게 -->
-					<td><c:if test="${user.id == board.writer }">
-							<a href="boarddelete?num=${board.num }">삭제</a>
-						</c:if></td>
+					<td>
+					<c:if test="${user.id == board.writer }">
+							<a href="boarddelete?num=${board.num }&page=${res.pageInfo.curPage}">삭제</a>
+						</c:if>
+						</td>
 				</tr>
 			</c:forEach>
 		</tr>
@@ -87,8 +119,16 @@ table {
 
 		<c:forEach begin="${res.pageInfo.startPage }"
 			end="${res.pageInfo.endPage }" var="i">
-			<a href="boardlist?page=${i}">${i}</a>&nbsp;&nbsp;	
-	</c:forEach>
+			<c:choose>
+				<c:when test="${res.pageInfo.curPage==i }">
+					<a href="boardlist?page=${i}" class="select" onclick="callBtn(${i});return false;">${i}</a>&nbsp;	
+			</c:when>
+				<c:otherwise>
+					<a href="boardlist?page=${i}" class="btn" onclick="callBtn(${i});return false;">${i}</a>&nbsp;	
+			</c:otherwise>
+			</c:choose>
+
+		</c:forEach>
 
 		<c:choose>
 			<c:when test="${res.pageInfo.curPage<res.pageInfo.allPage}">
@@ -97,8 +137,8 @@ table {
 			<c:otherwise>
 				&gt;
 			</c:otherwise>
-	 </c:choose>
-	 	&nbsp;&nbsp;
+		</c:choose>
+		&nbsp;&nbsp;
 	</div>
 
 </body>

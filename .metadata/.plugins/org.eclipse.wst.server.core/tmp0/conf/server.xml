@@ -162,7 +162,7 @@
 
       <Context docBase="C:\jsk\jsp_workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\jsk\jsp_workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Board" path="/board" reloadable="true" source="org.eclipse.jst.jee.server:Board">	
 	<Resource auth="container" driverClassName="org.mariadb.jdbc.Driver" factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory" maxActive="500" name="jdbc/kosta" password="1234" type="javax.sql.DataSource" url="jdbc:mariadb://localhost:3306/testdb" username="root"/>
-</Context></Host>
+</Context><Context docBase="C:\jsk\jsp_workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\NearByProj" path="/NearByProj" reloadable="true" source="org.eclipse.jst.jee.server:NearByProj"/></Host>
     </Engine>
   </Service>
 </Server>
