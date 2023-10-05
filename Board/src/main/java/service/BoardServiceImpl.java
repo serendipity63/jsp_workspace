@@ -87,12 +87,18 @@ public class BoardServiceImpl implements BoardService {
 		pageInfo.setStartPage(startPage);
 		pageInfo.setEndPage(endPage);
 
+		Map<String, Object> map = new HashMap<>();
+		map.put("pageInfo", pageInfo);
+
+		if (page == 0) {
+			return map;
+
+		}
+
 		int row = (page - 1) * 10 + 1; // 현재 페이지의 시작 row
 		param.put("row", row - 1);
 		List<Board> boardList = boardDao.searchBoardList(param);
 
-		Map<String, Object> map = new HashMap<>();
-		map.put("pageInfo", pageInfo);
 		map.put("boardList", boardList);
 		map.put("type", type);
 		map.put("keyworde", keyword);

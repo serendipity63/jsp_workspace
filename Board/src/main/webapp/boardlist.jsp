@@ -46,8 +46,6 @@ table {
 <script>
 
 	function callBtn(num){
-		console.log($("#keyword").val())
-		var keyword=$("#keyword").val();
 		if(keyword!=null && keyword.trim()!='' ){
 			$('#page').val(num);
 			$('#searchform').submit;
@@ -121,10 +119,10 @@ table {
 			end="${res.pageInfo.endPage }" var="i">
 			<c:choose>
 				<c:when test="${res.pageInfo.curPage==i }">
-					<a href="boardlist?page=${i}" class="select" onclick="callBtn(${i});return false;">${i}</a>&nbsp;	
+					<a href="boardlist?page=${i}" class="select" onclick="callBtn(${i});return ${res.keyword==null };">${i}</a>&nbsp;	
 			</c:when>
 				<c:otherwise>
-					<a href="boardlist?page=${i}" class="btn" onclick="callBtn(${i});return false;">${i}</a>&nbsp;	
+					<a href="boardlist?page=${i}" class="btn" onclick="callBtn(${i});return ${res.keyword==null };">${i}</a>&nbsp;	
 			</c:otherwise>
 			</c:choose>
 
