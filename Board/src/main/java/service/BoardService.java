@@ -21,4 +21,6 @@ public interface BoardService {
 
 	String boardLike(String id, Integer num) throws Exception;
 
+	Boolean isBoardLike(String id, Integer num) throws Exception;
+
 }

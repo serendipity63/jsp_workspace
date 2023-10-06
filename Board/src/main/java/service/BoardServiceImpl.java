@@ -119,17 +119,17 @@ public class BoardServiceImpl implements BoardService {
 		Integer likenum = boardDao.selectBoardLike(param);
 
 		Map<String, Object> res = new HashMap<>();
-		// 2-1. 없으면 boardlike에 삽입
+		// 2-1. 없으면
 		if (likenum == null) {
-			boardDao.insertBoardLike(param);
-			boardDao.plusBoardLikeCount(num);
+			boardDao.insertBoardLike(param); // boardlike에 삽입
+			boardDao.plusBoardLikeCount(num); // board 테이블에 좋아요 수 증가
+			res.put("select", true);
 		} else {
-			// 2-2. 있으면 boardlike에서 삭제
-			boardDao.deleteBoardLike(param);
-			boardDao.minusBoardLikeCount(num);
+			// 2-2. 있으면
+			boardDao.deleteBoardLike(param); // boardlike에 삭제
+			boardDao.minusBoardLikeCount(num); // board 테이블에 좋아요 수 감소
 			res.put("select", false);
 		}
-		// 3. board 테이블에 좋아요 수 조정 (삭제:-1, 삽입:+1)
 
 		// 4. 좋아요 수 리턴
 		Integer likecount = boardDao.selectLikeCount(num);
@@ -137,6 +137,17 @@ public class BoardServiceImpl implements BoardService {
 
 		JSONObject jsonObj = new JSONObject(res);
 		return jsonObj.toJSONString();
+	}
+
+	@Override
+	public Boolean isBoardLike(String id, Integer num) throws Exception {
+		Map<String, Object> param = new HashMap<>();
+		param.put("id", id);
+		param.put("num", num);
+		Integer likenum = boardDao.selectBoardLike(param);
+		if (likenum == null)
+			return false;
+		return true;
 	}
 
 }

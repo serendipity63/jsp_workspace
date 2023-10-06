@@ -7,8 +7,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dto.Board;
+import dto.Member;
 import service.BoardService;
 import service.BoardServiceImpl;
 
@@ -35,10 +37,17 @@ public class BoardDetail extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		Integer num = Integer.parseInt(request.getParameter("num"));
+
 		try {
 			BoardService boardService = new BoardServiceImpl();
 			Board board = boardService.boardDetail(num);
 			request.setAttribute("board", board);
+			HttpSession session = request.getSession();
+			Member member = (Member) session.getAttribute("user");
+			if (member != null) {
+				Boolean isLike = boardService.isBoardLike(member.getId(), num);
+				request.setAttribute("select", isLike);
+			}
 			request.getRequestDispatcher("detailform.jsp").forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
