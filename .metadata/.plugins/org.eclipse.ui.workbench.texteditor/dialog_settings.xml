@@ -6,6 +6,8 @@
 		<item key="wholeword" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="word"/>
+			<item value="header"/>
 			<item value="소"/>
 			<item value="button"/>
 			<item value="out"/>
