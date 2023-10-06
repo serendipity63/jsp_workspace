@@ -28,6 +28,7 @@
 	
 	<mappers>
 		<mapper resource="mapper/Board.xml"/>	
+		<mapper resource="mapper/BoardLike.xml"/>	
 		<mapper resource="mapper/Member.xml"/>	
 	</mappers>
 

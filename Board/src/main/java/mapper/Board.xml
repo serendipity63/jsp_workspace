@@ -61,5 +61,30 @@
 		where ${type} like '%${keyword}%'
 	</select>
 	<!-- 특정 조건에 해당하는 전체 개수 -->
+	<update id="updateBoardViewCount" parameterType="Integer">
+	<![CDATA[
+		update board set viewcount=viewcount+1 where num=#{num}
+		]]>
+	
+	</update>
+
+	<select id="selectLikeCount" parameterType="Integer" resultType="Integer">
+			select likecount from board where num=#{num}
+
+	</select>
+
+	
+	<update id="plusBoardLikeCount" parameterType="Integer">
+	<![CDATA[
+		update board set likecount =likecount+1 where num=#{num}
+		]]>
+	
+	</update>
+	<update id="minusBoardLikeCount" parameterType="Integer">
+	<![CDATA[
+		update board set likecount =likecount-1 where num=#{num}
+		]]>
+	
+	</update>
 
 </mapper>

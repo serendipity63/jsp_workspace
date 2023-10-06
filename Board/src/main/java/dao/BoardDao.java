@@ -23,4 +23,17 @@ public interface BoardDao {
 
 	List<Board> searchBoardList(Map<String, Object> param) throws Exception;
 
+	void updateBoardViewCount(Integer num) throws Exception;
+
+	Integer selectLikeCount(Integer num) throws Exception;
+
+	void plusBoardLikeCount(Integer num) throws Exception;
+
+	void minusBoardLikeCount(Integer num) throws Exception;
+
+	Integer selectBoardLike(Map<String, Object> param) throws Exception;
+
+	void insertBoardLike(Map<String, Object> param) throws Exception;
+
+	void deleteBoardLike(Map<String, Object> param) throws Exception;
 }

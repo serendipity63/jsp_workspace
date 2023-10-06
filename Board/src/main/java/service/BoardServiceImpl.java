@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.json.simple.JSONObject;
+
 import dao.BoardDao;
 import dao.BoardDaoImpl;
 import dto.Board;
@@ -50,6 +52,7 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public Board boardDetail(Integer num) throws Exception {
+		boardDao.updateBoardViewCount(num);
 		return boardDao.selectBoard(num);
 
 	}
@@ -104,6 +107,36 @@ public class BoardServiceImpl implements BoardService {
 		map.put("keyworde", keyword);
 
 		return map;
+	}
+
+	@Override
+	public String boardLike(String id, Integer num) throws Exception {
+		Map<String, Object> param = new HashMap<>();
+		param.put("id", id);
+		param.put("num", num);
+		// 왜 오브젝으를 할까? st in 포함하는게 obj
+		// 1. boardlike 테이블에 데이터 있는지 확인(member_id, board_num)
+		Integer likenum = boardDao.selectBoardLike(param);
+
+		Map<String, Object> res = new HashMap<>();
+		// 2-1. 없으면 boardlike에 삽입
+		if (likenum == null) {
+			boardDao.insertBoardLike(param);
+			boardDao.plusBoardLikeCount(num);
+		} else {
+			// 2-2. 있으면 boardlike에서 삭제
+			boardDao.deleteBoardLike(param);
+			boardDao.minusBoardLikeCount(num);
+			res.put("select", false);
+		}
+		// 3. board 테이블에 좋아요 수 조정 (삭제:-1, 삽입:+1)
+
+		// 4. 좋아요 수 리턴
+		Integer likecount = boardDao.selectLikeCount(num);
+		res.put("likecount", likecount);
+
+		JSONObject jsonObj = new JSONObject(res);
+		return jsonObj.toJSONString();
 	}
 
 }

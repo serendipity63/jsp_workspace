@@ -19,4 +19,6 @@ public interface BoardService {
 
 	Map<String, Object> boardSearch(String type, String keyword, Integer page) throws Exception;
 
+	String boardLike(String id, Integer num) throws Exception;
+
 }

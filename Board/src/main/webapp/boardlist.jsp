@@ -47,7 +47,7 @@ table {
 
 	function callBtn(num){
 		var keyword=$("#keyword").val();
-		if(keyword!=null && keyword.trim()=='' ){
+		if(keyword!=null && keyword.trim()!='' ){
 			$('#page').val(num);
 			$('#searchform').submit;
 		}

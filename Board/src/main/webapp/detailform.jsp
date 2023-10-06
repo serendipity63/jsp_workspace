@@ -30,6 +30,23 @@ table {
 	text-align: center;
 }
 </style>
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('#heart').click(function(){
+		$.ajax({
+			url:'like',
+			type:'post',
+			data: {'num':'<c:out value= "${board.num}"/>'},
+			success: function(res) {
+				console.log(res);
+			}
+				
+		})
+	})
+})
+
+</script>
 </head>
 <body>
 
@@ -67,6 +84,9 @@ table {
 				<a href="boardmodify?num=${board.num}">수정</a> &nbsp;&nbsp;
 				</c:if>
 			<a href="boardlist">목록</a>
+			<c:if test="${user ne Empty }">
+		<img id="heart" src="image?file=unlike.png" width="20px" height="20px"/>
+			</c:if>
 		</section>
 	</section>
 </body>
