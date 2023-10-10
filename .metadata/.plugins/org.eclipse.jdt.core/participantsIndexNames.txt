@@ -19,6 +19,8 @@ C:\jsk\jsp_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\17010
 \APITest\src\main\java
 C:\jsk\jsp_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\86392649.index
 \NearByProj\src\main\java
+C:\jsk\jsp_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\714388177.index
+\APITest2\src\main\java
 C:\jsk\jsp_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4072920326.index
 \BankMybatis\src\main\java
 C:\jsk\jsp_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2476452672.index
