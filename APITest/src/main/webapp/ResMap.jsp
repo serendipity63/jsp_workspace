@@ -56,8 +56,8 @@
 	
 	// 가져오기 버튼을 클릭하면 호출되는 핸들러 함수입니다
 	// Drawing Manager로 그려진 객체 데이터를 가져와 아래 지도에 표시합니다
-	function getDataFromDrawingMap(marker) {
-		var data = marker;
+	function getDataFromDrawingMap(draw) {
+		var data = draw;
 		console.log(data);
 		// 아래 지도에 그려진 도형이 있다면 모두 지웁니다
 		removeOverlays();
@@ -198,10 +198,9 @@
 
 		return path;
 	}
-	
  	var address = '${res.address}';
 	var drawStr = '${res.draw}';
-	var draw = JSON.parse(drawStr);
+	var draw = JSON.parse(drawStr); //json=> javascript object
 	console.log(address);
 	console.log(draw);
  	addressSearch(address);

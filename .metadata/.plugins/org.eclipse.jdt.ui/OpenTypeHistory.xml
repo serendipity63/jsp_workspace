@@ -3,7 +3,7 @@
     <typeInfo handle="=BankMybatis/src\/main\/java&lt;service{AccountService.java[AccountService" modifiers="513" timestamp="1695797359213"/>
     <typeInfo handle="=BankMybatis/src\/main\/java&lt;dao{MemberDAO.java[MemberDAO" modifiers="513" timestamp="1695800115883"/>
     <typeInfo handle="=BankMybatis/src\/main\/java&lt;service{MemberService.java[MemberService" modifiers="513" timestamp="1695801049946"/>
-    <typeInfo handle="=Board/src\/main\/java&lt;service{MemberService.java[MemberService" modifiers="513" timestamp="1696388974581"/>
-    <typeInfo handle="=Board/src\/main\/java&lt;dao{BoardDao.java[BoardDao" modifiers="513" timestamp="1696492468848"/>
-    <typeInfo handle="=Board/src\/main\/java&lt;service{BoardService.java[BoardService" modifiers="513" timestamp="1696492670739"/>
+    <typeInfo handle="=Board/src\/main\/java&lt;service{MemberService.java[MemberService" modifiers="513" timestamp="1696576238752"/>
+    <typeInfo handle="=Board/src\/main\/java&lt;dao{BoardDao.java[BoardDao" modifiers="513" timestamp="1696560574651"/>
+    <typeInfo handle="=Board/src\/main\/java&lt;service{BoardService.java[BoardService" modifiers="513" timestamp="1696571769199"/>
 </typeInfoHistroy>
